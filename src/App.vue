@@ -1,5 +1,6 @@
 <template>
-    <form @submit.prevent="showData">
+    <form class="container" @submit.prevent="showData">
+        <h1>Form</h1>
         <input-form v-for="input in inputs"
                     :key="input.title"
                     :Title="input.title"
@@ -8,7 +9,8 @@
         </input-form>
         <button type="submit">Submit</button>
     </form>
-    <div v-show="showInfo">
+    <div class="container" v-show="showInfo">
+        <h1>Collect Data</h1>
         <ul>
             <li>
                 <h4>Phone</h4>
@@ -86,3 +88,33 @@ export default {
     },
 };
 </script>
+<style>
+.container{
+    font-family: Roboto,sans-serif;
+    margin-top: 15px;
+    margin-left: 15px;
+    border: 3px solid #4922e3;
+    padding: 10px;
+}
+button{
+    margin-top: 15px;
+    background-color: #fff;
+    border: 3px solid #4922e3;
+    color:#17151f;
+    font-weight: 600;
+    font-size: 22px;
+    padding: 12px 15px;
+}
+h4{
+    width: 8%;
+    font-size: 24px;
+    font-weight: 600;
+    border-bottom: 4px solid #4922e3;
+}
+p{
+    padding-left: 10px;
+    font-size: 22px;
+    font-weight: 600;
+    border-left: 4px solid #4922e3;
+}
+</style>
